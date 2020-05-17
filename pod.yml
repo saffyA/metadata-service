@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: metadata-service
+spec:
+  containers:
+  - image: saffya/metadata-service
+    name: metadata-service-container
+    ports:
+    - containerPort: 8080
+      protocol: TCP
