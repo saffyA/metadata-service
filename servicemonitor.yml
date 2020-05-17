@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: metadata-service-wm-service-monitor
+  labels:
+    app: metadata-service-wm
+spec:
+  selector:
+    matchLabels:
+      app: metadata-service-wm-app
+  endpoints:
+  - port: api-wm
+    interval: 15s
+    path: '/actuator/prometheus'
